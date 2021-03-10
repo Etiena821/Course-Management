@@ -1,0 +1,35 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Management System</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class ="container my-2">
+    <h1>Student DashBoard</h1>
+    <hr>
+    <h1>Student Information</h1>
+
+<!--    <a th:href = "@{/showUpdateBioForm/{id}(id = ${thisStudent.id})}" class = "btn btn-info btn-sm mb-3">Update Bio</a>-->
+<!--    <a th:href = "@{/course-registration/{level}}" class = "btn btn-info btn-sm mb-3">Register Courses</a>-->
+
+    <div>
+        <label>Course level:</label>
+        <select >
+                <span th:each="cl : ${levels}">
+                    <option th:value="${cl.level}" th:href  = "@{/student/course-registration/{id}(id=${cl.level})}" th:text="${cl.level}"></option>
+                </span>
+        </select>
+    </div>
+
+</div >
+<div align="center"><a th:href="@{/logout}" class="btn btn-info">Log Out</a> </div>
+</body>
+</html>

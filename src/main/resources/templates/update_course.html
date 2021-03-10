@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Management System</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+
+</head>
+<body>
+
+<div class ="container my-2">
+    <h1>Student DashBoard</h1>
+    <hr>
+    <h1>Student Information</h1>
+
+    <a th:href = "@{/showFormForUpdate/{id}(id = ${course.id})}" class = "btn btn-info btn-sm mb-3">Update Course</a>
+
+<!--    <table border="1" class = "table table-striped table-responsive-md">-->
+<!--        <thead>-->
+<!--        <tr>-->
+<!--            <th>First Name</th>-->
+<!--            <th>Last Name</th>-->
+<!--            <th>Course Level</th>-->
+<!--            <th>Actions</th>-->
+<!--        </tr>-->
+<!--        </thead>-->
+<!--        <tbody>-->
+<!--        <tr th:each="student : ${thisStudent}">-->
+<!--            <td th:text="${student.firstName}"></td>-->
+<!--            <td th:text="${student.lastName}"></td>-->
+<!--            <td th:text="${student.courseLevel.level}"></td>-->
+<!--            <td>-->
+<!--                <a th:href="@{/deleteCourse/{id}(id=${student.id})}" class="btn btn-danger">Delete</a>-->
+<!--                <a th:href="@{/viewCourseDetails/{id}(id=${student.id})}" class="btn btn-success">View Details</a>-->
+<!--            </td>-->
+<!--        </tr>-->
+<!--        </tbody>-->
+<!--    </table>-->
+
+<!--</div >-->
+<div align="center"><a th:href="@{/logout}" class="btn btn-info">Log Out</a> </div>
+</body>
+</html>

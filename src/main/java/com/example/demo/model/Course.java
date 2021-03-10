@@ -1,28 +1,25 @@
 package com.example.demo.model;
 
-import lombok.Data;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.List;
+import java.util.Set;
 
-@Data
+@Setter
+@Getter
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
-public class Course {
+public class Course extends BaseModel{
 
-    @Id
-     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long id;
-    private String code;
-    private String unit;
-    private String description;
+    private String courseName;
 
     @ManyToOne
-    private Semester semester;
+    private CourseLevel courseLevel;
 
-    @ManyToOne
-    private Student student;
-
-    @ManyToOne
-    private Lecturer lecturer;
-
+    @OneToMany(mappedBy = "course")
+    private Set<CourseRegistration> registrations;
 }
